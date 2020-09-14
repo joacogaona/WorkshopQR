@@ -17,8 +17,9 @@ const ACCESS_TOKEN = properties.get('access_token'),
     STORE_ID = properties.get('store_id'),
     /**Agregar el resto de la API de publicacion de ordenes en los espacios de XXX con variables declaradas previamente o con sentencias de la API */
     MP_ORDER_URL = properties.get('mp_order_basepath') + XXX + '/stores/' + XXX + '/XXX/' + XXX + '/orders' + '?access_token=' + XXX,
-    MP_MERCHANT_URL = properties.get('mp_merchant_basepath') + '%d?access_token=' + ACCESS_TOKEN,
-    CURRENCY_ID = properties.get('currency_id');
+    /**Corregir la variable debajo por la API que corresponda, y reemplazar las variables XXX */
+    MP_ORDERDELETE_URL = properties.get('mp_order_basepath') + XXX + '/stores/' + XXX + '/XXX/' + XXX + '/orders' + '?access_token=' + XXX,
+    MP_MERCHANT_URL = properties.get('mp_merchant_basepath') + '%d?access_token=' + ACCESS_TOKEN;
 
 /**
  * This resource creates an instore order for item payment
@@ -33,7 +34,6 @@ router.post('/order', (req, res) => {
     const currency_id = CURRENCY_ID;
     const unit_price = req.body.unit_price;
     const quantity = req.body.quantity;
-    const picture_url = basePath + req.body.picture_url;
     const notification_url = basePath + '/api/notification';
     const expiration_date = "2023-08-22T16:34:56.559-04:00";
 
