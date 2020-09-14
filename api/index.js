@@ -31,7 +31,6 @@ router.post('/order', (req, res) => {
     const basePath = req.protocol + '://' + req.get('host');
     const title = req.body.title;
     const description = "Compra en Mercado Pago";
-    const currency_id = CURRENCY_ID;
     const unit_price = req.body.unit_price;
     const quantity = req.body.quantity;
     const notification_url = basePath + '/api/notification';
